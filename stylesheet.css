@@ -14,21 +14,21 @@
 
 .move {
   width: 50%;
-  height: 130px;
+  height: 110px;
   float:left;
 }
 
 .ctrl {
   width: 50%;
-  height: 130px;
+  height: 110px;
   float: left;
   padding-top:150px;
 }
 
 #movebutton {
   background: gray;
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   margin: auto;
   border-radius: 75px;
 }
