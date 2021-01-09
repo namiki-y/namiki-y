@@ -298,7 +298,7 @@ function idou() {
 
   if(x<=43)key[37] = true;
   else key[37] = false;
-  if(x>=87 && x<200)key[39] = true;
+  if(x>=87 && x<150)key[39] = true;
   else key[39] = false;
 
   if(y<=43)key[38] = true;
