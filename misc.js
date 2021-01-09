@@ -296,15 +296,17 @@ function idou() {
 	var x = touchX - positionX ;
 	var y = touchY - positionY ;
 
+ if(x<150 && y<150){
   if(x<=43)key[37] = true;
   else key[37] = false;
-  if(x>=87 && x<150)key[39] = true;
+  if(x>=87)key[39] = true;
   else key[39] = false;
 
   if(y<=43)key[38] = true;
   else key[38] = false;
   if(y>87)key[40] = true;
   else key[40] = false;
+ }
 }
 
 function idoustop() {
