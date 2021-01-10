@@ -14,6 +14,7 @@ function rand(min,max){
 //キーボード押されたとき
 document.onkeydown = function(e){
   key[e.keyCode] = true;
+  if(e.keyCode ==40)event.preventDefault();
 }
 //キーボード離したとき
 document.onkeyup = function(e){
@@ -186,6 +187,9 @@ function gameend(){
   init();
   game = setInterval(gameOver,gameSpeed);
   document.getElementById("myCanvas").addEventListener('click',openstart);
+
+  if(score*1000>highscore)localStorage.setItem("highScore",score);
+  if(gekiha>maxgekiha)localStorage.setItem("maxGekiha",gekiha);
 }
 
 //スタート画面表示
@@ -195,6 +199,13 @@ function openstart(){
   gameinit();
   init();
   game = setInterval(start,gameSpeed);
+
+  //記録
+  highscore = Number(localStorage.getItem("highScore"))*1000;
+  maxgekiha = localStorage.getItem("maxGekiha");
+
+  document.getElementById('highscore').innerHTML = "HIGHSCORE：￥" + highscore.toLocaleString();
+  document.getElementById('maxgekiha').innerHTML = "最高撃破数："+ maxgekiha*1;
 }
 
 //スタート画面
@@ -296,7 +307,6 @@ function idou() {
 	var x = touchX - positionX ;
 	var y = touchY - positionY ;
 
- if(x<130 && y<130){
   if(x<=37)key[37] = true;
   else key[37] = false;
   if(x>=73)key[39] = true;
@@ -306,7 +316,6 @@ function idou() {
   else key[38] = false;
   if(y>73)key[40] = true;
   else key[40] = false;
- }
 }
 
 function idoustop() {
@@ -316,3 +325,6 @@ function idoustop() {
 idoubutton.addEventListener("touchstart",idou);
 idoubutton.addEventListener("touchmove",idou);
 idoubutton.addEventListener("touchend",idoustop);
+
+var highscore;
+var maxgekiha;
