@@ -6,7 +6,7 @@
 var userAgent = window.navigator.userAgent.toLowerCase();
 
 if(userAgent.indexOf('line') != -1) {
-  document.getElementById('myCanvas').style.display=none;
+  document.getElementById('myCanvas').style.display="none";
 }
 
 //ステージ
