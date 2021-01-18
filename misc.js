@@ -9,6 +9,8 @@ if(userAgent.indexOf('line') != -1) {
   document.getElementById('myCanvas').style.display="none";
   document.getElementById('record').style.display="none";
   document.getElementById('line').style.display="block";
+}else{
+  document.getElementById('line').style.display="none";
 }
 
 //ステージ
