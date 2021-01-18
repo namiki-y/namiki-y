@@ -2,6 +2,13 @@
 //misc.js その他
 //
 
+//ブラウザ判別
+var userAgent = window.navigator.userAgent.toLowerCase();
+
+if(userAgent.indexOf('line') != -1) {
+  document.getElementById('myCanvas').style.display=none;
+}
+
 //ステージ
 var stage = 0;
 var enemypar = 50;
